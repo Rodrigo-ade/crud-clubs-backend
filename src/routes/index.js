@@ -14,4 +14,4 @@ router.get('/clubs', getClubs);
 router.get('/clubs/:clubTla', getClub);
 router.delete('/clubs/:clubTla', deleteClub);
 router.post('/clubs', createClub);
-router.put('/clubs', updateClub);
+router.put('/clubs/:clubTla', updateClub);

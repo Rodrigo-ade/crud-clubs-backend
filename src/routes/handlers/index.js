@@ -3,13 +3,13 @@ export async function getClubs(req, res) {
 }
 
 export async function getClub(req, res) {
-  const { teamTla } = req.params;
-  res.send(`Should retrieve club ${teamTla}`);
+  const { clubTla } = req.params;
+  res.send(`Should retrieve club ${clubTla}`);
 }
 
 export async function deleteClub(req, res) {
-  const { teamTla } = req.params;
-  res.send(`Should delete club ${teamTla}`);
+  const { clubTla } = req.params;
+  res.send(`Should delete club ${clubTla}`);
 }
 
 export async function createClub(req, res) {
@@ -17,5 +17,6 @@ export async function createClub(req, res) {
 }
 
 export async function updateClub(req, res) {
-  res.send('Should update the club with the one that comes in req.body');
+  const { clubTla } = req.params;
+  res.send(`Should update the club ${clubTla} with the one that comes in req.body`);
 }
