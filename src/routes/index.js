@@ -12,6 +12,6 @@ export default router;
 
 router.get('/clubs', getClubs);
 router.get('/clubs/:clubTla', getClub);
-router.delete('/clubs/:teamTla', deleteClub);
+router.delete('/clubs/:clubTla', deleteClub);
 router.post('/clubs', createClub);
 router.put('/clubs', updateClub);
