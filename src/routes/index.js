@@ -10,8 +10,8 @@ import {
 const router = express.Router();
 export default router;
 
-router.get('/teams', getClubs);
-router.get('/teams/:teamTla', getClub);
-router.delete('/teams/:teamTla', deleteClub);
-router.post('/teams', createClub);
-router.put('/teams', updateClub);
+router.get('/clubs', getClubs);
+router.get('/clubs/:clubTla', getClub);
+router.delete('/clubs/:teamTla', deleteClub);
+router.post('/clubs', createClub);
+router.put('/clubs', updateClub);
