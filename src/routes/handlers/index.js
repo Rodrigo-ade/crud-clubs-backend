@@ -1,12 +1,13 @@
 import { getClubs as getClubsService } from '../../services/getClubs.js';
+import getClubService from '../../services/getClub.js';
 
 export function getClubs(req, res) {
   getClubsService(res);
 }
 
-export async function getClub(req, res) {
+export function getClub(req, res) {
   const { clubTla } = req.params;
-  res.send(`Should retrieve club ${clubTla}`);
+  getClubService(res, clubTla);
 }
 
 export async function deleteClub(req, res) {
