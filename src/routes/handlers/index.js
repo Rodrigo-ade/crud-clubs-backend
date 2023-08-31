@@ -1,12 +1,7 @@
-import getClubsService from '../../services/getClubs.js';
+import { getClubs as getClubsService } from '../../services/getClubs.js';
 
-export async function getClubs(req, res) {
-  try {
-    const clubs = await getClubsService();
-    res.status(200).json(clubs);
-  } catch (err) {
-    res.status(500).send(err);
-  }
+export function getClubs(req, res) {
+  getClubsService(res);
 }
 
 export async function getClub(req, res) {
