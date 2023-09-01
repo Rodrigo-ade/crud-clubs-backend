@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 export const TEAMS_PATH = 'src/data/teams.json';
+export const LAST_TEAM_ID_MINUS_LENGTH = 1025;
 
 export function getClubs(res) {
   try {

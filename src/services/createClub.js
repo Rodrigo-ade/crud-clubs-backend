@@ -1,12 +1,11 @@
 import fs from 'fs';
 import mapClub from '../mappers/clubMapper.js';
 import { isDataValid } from '../utilities/utilities.js';
-import { TEAMS_PATH } from './getClubs.js';
+import { TEAMS_PATH, LAST_TEAM_ID_MINUS_LENGTH } from './getClubs.js';
 
 export default function createClub(req, res) {
   const data = req.body;
   const { file } = req;
-  const LAST_TEAM_ID_MINUS_LENGTH = 1025;
 
   if (!file || !data || !isDataValid(data)) {
     return res.status(400).json({ message: 'Missing required data' });
