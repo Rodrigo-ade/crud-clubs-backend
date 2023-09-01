@@ -1,6 +1,7 @@
 import { getClubs as getClubsService } from '../../services/getClubs.js';
 import getClubService from '../../services/getClub.js';
 import deleteClubService from '../../services/deleteClub.js';
+import createClubService from '../../services/createClub.js';
 
 export function getClubs(req, res) {
   getClubsService(res);
@@ -17,7 +18,7 @@ export async function deleteClub(req, res) {
 }
 
 export async function createClub(req, res) {
-  res.send('Should create club that comes in req.body (upload and get club logo)');
+  createClubService(req, res);
 }
 
 export async function updateClub(req, res) {
