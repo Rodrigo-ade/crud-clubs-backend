@@ -2,6 +2,7 @@ import { getClubs as getClubsService } from '../../services/getClubs.js';
 import getClubService from '../../services/getClub.js';
 import deleteClubService from '../../services/deleteClub.js';
 import createClubService from '../../services/createClub.js';
+import updateClubService from '../../services/updateClub.js';
 
 export function getClubs(req, res) {
   getClubsService(res);
@@ -22,6 +23,5 @@ export async function createClub(req, res) {
 }
 
 export async function updateClub(req, res) {
-  const { clubTla } = req.params;
-  res.send(`Should update the club ${clubTla} with the one that comes in req.body`);
+  updateClubService(req, res);
 }
