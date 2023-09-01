@@ -5,3 +5,19 @@ export function isClubTlaValid(clubTla) {
   }
   return true;
 }
+
+export function getClubColors(color1, color2) {
+  return `${color1} / ${color2}`;
+}
+
+export function isDataValid(data) {
+  let valid = true;
+
+  Object.values(data).forEach((value) => {
+    if (value === '') {
+      valid = false;
+    }
+  });
+
+  return valid;
+}
