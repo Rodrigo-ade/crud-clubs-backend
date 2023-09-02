@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "7dec0a62-466a-4cbf-a470-5725fe1e866e",
+		"name": "Crud Clubs backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27430467"
+	},
+	"item": [
+		{
+			"name": "clubs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clubs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clubs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clubs/ARS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clubs/ARS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clubs",
+						"ARS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clubs/ARS (DELETE)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clubs/ARS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clubs",
+						"ARS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clubs (CREATE)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "crestUrl",
+							"description": "Add logo file",
+							"type": "file",
+							"src": "/C:/Users/Ro/Desktop/Inter-miami-cf-logo-1.png"
+						},
+						{
+							"key": "country",
+							"value": "United States",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Inter Miami",
+							"type": "text"
+						},
+						{
+							"key": "shortName",
+							"value": "Miami",
+							"type": "text"
+						},
+						{
+							"key": "tla",
+							"value": "MIA",
+							"type": "text"
+						},
+						{
+							"key": "adress",
+							"value": "Miami Street 1234",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "46543210",
+							"type": "text"
+						},
+						{
+							"key": "website",
+							"value": "https://www.intermiamicf.com/",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "miami@inter.com",
+							"type": "text"
+						},
+						{
+							"key": "founded",
+							"value": "2010",
+							"type": "text"
+						},
+						{
+							"key": "color1",
+							"value": "Pink",
+							"type": "text"
+						},
+						{
+							"key": "color2",
+							"value": "Black",
+							"type": "text"
+						},
+						{
+							"key": "venue",
+							"value": "Miami Dolphins Stadium",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/clubs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clubs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clubs (UPDATE) (method-override = PUT)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "crestUrl",
+							"description": "Add club logo",
+							"type": "file",
+							"src": "/C:/Users/Ro/Desktop/man_city_old_logo.png"
+						},
+						{
+							"key": "country",
+							"value": "England",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Manchester City OLD",
+							"type": "text"
+						},
+						{
+							"key": "shortName",
+							"value": "City",
+							"type": "text"
+						},
+						{
+							"key": "adress",
+							"value": "Man city 1234",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "46543210",
+							"type": "text"
+						},
+						{
+							"key": "website",
+							"value": "https://www.manchestercity.com/",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "manchester@cityOLD.com",
+							"type": "text"
+						},
+						{
+							"key": "founded",
+							"value": "1800",
+							"type": "text"
+						},
+						{
+							"key": "color1",
+							"value": "Skyblue",
+							"type": "text"
+						},
+						{
+							"key": "color2",
+							"value": "White",
+							"type": "text"
+						},
+						{
+							"key": "venue",
+							"value": "Manchester Arena OLD",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/clubs/MCI?_method=PUT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clubs",
+						"MCI"
+					],
+					"query": [
+						{
+							"key": "_method",
+							"value": "PUT"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
