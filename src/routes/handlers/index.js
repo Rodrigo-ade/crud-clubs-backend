@@ -33,5 +33,14 @@ export async function createClub(req, res) {
 }
 
 export async function updateClub(req, res) {
-  updateClubService(req, res);
+  const { file } = req;
+  const { clubTla } = req.params;
+  const data = req.body;
+  data.tla = clubTla;
+
+  if (!file || !data || !isDataValid(data)) {
+    return res.status(400).json({ message: 'Missing required data' });
+  }
+  const fileName = file.filename;
+  return updateClubService(fileName, data, res);
 }

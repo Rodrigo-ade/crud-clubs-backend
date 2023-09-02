@@ -1,20 +1,10 @@
 import fs from 'fs';
-import { isDataValid } from '../utilities/utilities.js';
 import { TEAMS_PATH, LAST_TEAM_ID_MINUS_LENGTH } from './getClubs.js';
 import mapClub from '../mappers/clubMapper.js';
 
-export default function updateClub(req, res) {
-  const { file } = req;
-  const data = req.body;
-  const { clubTla } = req.params;
-  data.tla = clubTla;
-
-  if (!file || !data || !isDataValid(data)) {
-    return res.status(400).json({ message: 'Missing required data' });
-  }
-
+export default function updateClub(fileName, data, res) {
   const clubs = JSON.parse(fs.readFileSync(TEAMS_PATH));
-  const crestUrl = `src/data/uploads/${req.file.filename}`;
+  const crestUrl = `src/data/uploads/${fileName}`;
   const clubId = clubs.length + LAST_TEAM_ID_MINUS_LENGTH;
   const club = mapClub(clubId, data, crestUrl);
 
