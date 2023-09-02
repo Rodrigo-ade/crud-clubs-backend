@@ -3,7 +3,7 @@ import getClubService from '../../services/getClub.js';
 import deleteClubService from '../../services/deleteClub.js';
 import createClubService from '../../services/createClub.js';
 import updateClubService from '../../services/updateClub.js';
-import { isClubTlaValid } from '../../utilities/utilities.js';
+import { isClubTlaValid, isDataValid } from '../../utilities/utilities.js';
 
 export function getClubs(req, res) {
   getClubsService(res);
@@ -23,7 +23,13 @@ export async function deleteClub(req, res) {
 }
 
 export async function createClub(req, res) {
-  createClubService(req, res);
+  const data = req.body;
+  const { file } = req;
+  if (!file || !data || !isDataValid(data)) {
+    return res.status(400).json({ message: 'Missing required data' });
+  }
+  const fileName = file.filename;
+  return createClubService(data, fileName, res);
 }
 
 export async function updateClub(req, res) {
