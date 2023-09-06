@@ -15,7 +15,7 @@ const router = express.Router();
 router.get('/clubs', getClubs);
 router.get('/clubs/:clubTla', getClub);
 router.delete('/clubs/:clubTla', deleteClub);
-router.post('/clubs', upload.single('crestUrl'), createClub);
-router.put('/clubs/:clubTla', upload.single('crestUrl'), updateClub);
+router.post('/clubs', upload.single('logo_file'), createClub);
+router.put('/clubs/:clubTla', upload.single('logo_file'), updateClub);
 
 export default router;
