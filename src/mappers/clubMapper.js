@@ -19,7 +19,7 @@ export default function mapClub(id, data, crestUrl) {
   } = data;
   const clubColors = getClubColors(color1, color2);
   const area = new Area(country);
-
+  const validWebsite = website.includes('http') ? website : `https://${website}`;
   return new Club(
     id,
     area,
@@ -29,7 +29,7 @@ export default function mapClub(id, data, crestUrl) {
     crestUrl,
     address,
     phone,
-    website,
+    validWebsite,
     email,
     founded,
     clubColors,
