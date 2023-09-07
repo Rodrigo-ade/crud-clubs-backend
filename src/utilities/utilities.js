@@ -23,11 +23,11 @@ export function isDataValid(data) {
 }
 
 export function getNextClubId(clubs) {
-  let newId = -Infinity;
+  let biggestId = -Infinity;
   clubs.forEach((club) => {
-    if (club.id > newId) {
-      newId = club.id;
+    if (club.id > biggestId) {
+      biggestId = club.id;
     }
   });
-  return newId + 1;
+  return biggestId + 1;
 }
