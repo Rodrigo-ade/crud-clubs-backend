@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import router from './routes/index.js';
-import { PORT } from './services/getClubs.js';
+import { PORT } from './appSettings.js';
 
 const app = express();
 app.use(cors());

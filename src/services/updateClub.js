@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { TEAMS_PATH, PORT } from './getClubs.js';
+import { TEAMS_PATH, PORT } from '../appSettings.js';
 import mapClub from '../mappers/clubMapper.js';
 
 export default function updateClub(fileName, data, res) {

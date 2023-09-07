@@ -1,4 +1,4 @@
-import { getClubs as getClubsService } from '../../services/getClubs.js';
+import getClubsService from '../../services/getClubs.js';
 import getClubService from '../../services/getClub.js';
 import deleteClubService from '../../services/deleteClub.js';
 import createClubService from '../../services/createClub.js';

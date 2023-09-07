@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { TEAMS_PATH } from './getClubs.js';
+import { TEAMS_PATH } from '../appSettings.js';
 
 export default function deleteClub(res, clubTla) {
   try {
