@@ -7,7 +7,6 @@ export default function createClub(data, fileName, res) {
   const crestUrl = `http://localhost:${PORT}/${fileName}`;
   const clubs = JSON.parse(fs.readFileSync(TEAMS_PATH));
   const clubId = getNextClubId(clubs);
-  console.log(`club id nueva es ${clubId}`);
   const club = mapClub(clubId, data, crestUrl);
   clubs.push(club);
   fs.writeFileSync(TEAMS_PATH, JSON.stringify(clubs));
