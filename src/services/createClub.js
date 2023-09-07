@@ -1,12 +1,13 @@
 import fs from 'fs';
 import mapClub from '../mappers/clubMapper.js';
 import { TEAMS_PATH, PORT } from '../appSettings.js';
+import { getNextClubId } from '../utilities/utilities.js';
 
 export default function createClub(data, fileName, res) {
-  const NEW_TEAM_ID = 2000;
   const crestUrl = `http://localhost:${PORT}/${fileName}`;
   const clubs = JSON.parse(fs.readFileSync(TEAMS_PATH));
-  const clubId = clubs.length + NEW_TEAM_ID;
+  const clubId = getNextClubId(clubs);
+  console.log(`club id nueva es ${clubId}`);
   const club = mapClub(clubId, data, crestUrl);
   clubs.push(club);
   fs.writeFileSync(TEAMS_PATH, JSON.stringify(clubs));

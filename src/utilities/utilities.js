@@ -21,3 +21,13 @@ export function isDataValid(data) {
 
   return valid;
 }
+
+export function getNextClubId(clubs) {
+  let newId = -Infinity;
+  clubs.forEach((club) => {
+    if (club.id > newId) {
+      newId = club.id;
+    }
+  });
+  return newId + 1;
+}
