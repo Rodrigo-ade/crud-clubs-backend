@@ -3,10 +3,10 @@ import mapClub from '../mappers/clubMapper.js';
 import { TEAMS_PATH, PORT } from '../appSettings.js';
 
 export default function createClub(data, fileName, res) {
-  const LAST_TEAM_ID_MINUS_LENGTH = 1025;
+  const NEW_TEAM_ID = 2000;
   const crestUrl = `http://localhost:${PORT}/${fileName}`;
   const clubs = JSON.parse(fs.readFileSync(TEAMS_PATH));
-  const clubId = clubs.length + LAST_TEAM_ID_MINUS_LENGTH;
+  const clubId = clubs.length + NEW_TEAM_ID;
   const club = mapClub(clubId, data, crestUrl);
   clubs.push(club);
   fs.writeFileSync(TEAMS_PATH, JSON.stringify(clubs));
