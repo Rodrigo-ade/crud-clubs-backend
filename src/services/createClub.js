@@ -1,9 +1,9 @@
 import fs from 'fs';
 import mapClub from '../mappers/clubMapper.js';
-import { TEAMS_PATH, LAST_TEAM_ID_MINUS_LENGTH } from './getClubs.js';
+import { TEAMS_PATH, LAST_TEAM_ID_MINUS_LENGTH, PORT } from './getClubs.js';
 
 export default function createClub(data, fileName, res) {
-  const crestUrl = `src/data/uploads/${fileName}`;
+  const crestUrl = `http://localhost:${PORT}/${fileName}`;
   const clubs = JSON.parse(fs.readFileSync(TEAMS_PATH));
   const clubId = clubs.length + LAST_TEAM_ID_MINUS_LENGTH;
   const club = mapClub(clubId, data, crestUrl);

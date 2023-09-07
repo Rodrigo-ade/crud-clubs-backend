@@ -1,10 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import router from './routes/index.js';
+import { PORT } from './services/getClubs.js';
 
 const app = express();
-const PORT = 8080;
 app.use(cors());
+app.use(express.static('src/data/uploads'));
 app.use(router);
 
 app.listen(PORT, () => {
