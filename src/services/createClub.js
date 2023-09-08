@@ -4,7 +4,7 @@ import { TEAMS_PATH, PORT } from '../appSettings.js';
 import { getNextClubId } from '../utilities/utilities.js';
 
 export default function createClub(data, fileName, res) {
-  const crestUrl = `https://crud-clubs-back.onrender.com/${fileName}`;
+  const crestUrl = `http://localhost:${PORT}/${fileName}`;
   const clubs = JSON.parse(fs.readFileSync(TEAMS_PATH));
   const clubId = getNextClubId(clubs);
   const club = mapClub(clubId, data, crestUrl);

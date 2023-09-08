@@ -4,7 +4,7 @@ import mapClub from '../mappers/clubMapper.js';
 
 export default function updateClub(fileName, data, res) {
   const clubs = JSON.parse(fs.readFileSync(TEAMS_PATH));
-  const crestUrl = `https://crud-clubs-back.onrender.com/${fileName}`;
+  const crestUrl = `http://localhost:${PORT}/${fileName}`;
   const oldClubIndex = clubs.findIndex((oldClub) => oldClub.tla === data.tla);
 
   if (oldClubIndex === -1) {
