@@ -4,6 +4,7 @@ import deleteClubService from '../../services/deleteClub.js';
 import createClubService from '../../services/createClub.js';
 import updateClubService from '../../services/updateClub.js';
 import { isClubTlaValid, isDataValid } from '../../utilities/utilities.js';
+import resetClubsService from '../../services/resetClubs.js';
 
 export function getClubs(req, res) {
   getClubsService(res);
@@ -43,4 +44,8 @@ export async function updateClub(req, res) {
   }
   const fileName = file.filename;
   return updateClubService(fileName, data, res);
+}
+
+export async function resetClubs(req, res) {
+  return resetClubsService(res);
 }
